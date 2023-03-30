@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:paytr_case/app_constant/app_constant.dart';
 import 'package:paytr_case/app_constant/text_styles.dart';
 import 'package:paytr_case/app_provider/app_provider.dart';
-import 'package:paytr_case/service/local_data_manager.dart';
-import 'package:paytr_case/view_model/countries_view_model.dart';
+
 import 'package:paytr_case/view_model/auth_view_model.dart';
 import 'package:paytr_case/widget/app/app_button.dart';
 import 'package:paytr_case/widget/form/textFormField_with_radius.dart';
@@ -17,6 +16,7 @@ class SignInView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: Key("signInScreen"),
       body: Padding(
         padding: horizontalPadding,
         child: SingleChildScrollView(
@@ -28,13 +28,14 @@ class SignInView extends StatelessWidget {
                   height: 150,
                 ),
                 const Text(
-                  "Hoşgeldiniz",
+                  "Hoş Geldiniz",
                   style: titleTextStyle,
                 ),
                 const SizedBox(
                   height: 100,
                 ),
                 AppTextFormField(
+                  key: Key("userName"),
                   controller: nameCtrl,
                   validator: (value) {
                     if (value?.isEmpty ?? true) return "Boş Olamaz";
@@ -47,6 +48,7 @@ class SignInView extends StatelessWidget {
                   height: 30,
                 ),
                 AppTextFormField(
+                  key: Key("password"),
                   controller: passwordCtrl,
                   validator: (value) {
                     if (value?.isEmpty ?? true) return "Boş Olamaz";
@@ -61,7 +63,8 @@ class SignInView extends StatelessWidget {
                 ),
                 AppProvider<AuthViewModel>(builder: (context, provider, _) {
                   return AppButton(
-                    isLoading: provider.isBusy,
+                    key: Key("signin"),
+                    isLoading: provider.isBusy2,
                     title: "Giriş Yap",
                     onTap: () {
                       if (!formKey.currentState!.validate()) return;

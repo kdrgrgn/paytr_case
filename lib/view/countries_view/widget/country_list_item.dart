@@ -11,6 +11,7 @@ class CountryListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      key: Key("$name"),
       onTap:!withTap?null: () {
         AppRouter.normalNavigate(CountryDetailView(name,value));
       },
