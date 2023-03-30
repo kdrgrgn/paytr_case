@@ -33,11 +33,11 @@ samples, guidance on mobile development, and a full API reference.
  * beta Apk almak için Örnek  ------> flutter build apk -t lib/main_beta.dart --release
  * development debug modda çalıştırmak için -----> flutter run -t lib/development.dart
 
- Bu yapılan env geliştirmesi sayesinde istenilen servisin base url i rahatlıkla değiştirilebilir ve flavor kontrolu rahatlıkla yapılabilir
+ * Bu yapılan env geliştirmesi sayesinde istenilen servisin base url i rahatlıkla değiştirilebilir ve flavor kontrolu rahatlıkla yapılabilir
 
 ****  **Giriş bilgileri **
-    kullanıcı Adı    Password
-        kadir  ---->  123123
-        paytr  ---->  123123
+* kullanıcı Adı : kadir    Password : 123123
+
+* kullanıcı Adı : paytr    Password : 123123
 
 
