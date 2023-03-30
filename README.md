@@ -36,8 +36,8 @@ samples, guidance on mobile development, and a full API reference.
  * Bu yapılan env geliştirmesi sayesinde istenilen servisin base url i rahatlıkla değiştirilebilir ve flavor kontrolu rahatlıkla yapılabilir
 
 ****  **Giriş bilgileri **
-* kullanıcı Adı : kadir    Password : 123123
+* kullanıcı Adı : kadir  ,  Şifre : 123123
 
-* kullanıcı Adı : paytr    Password : 123123
+* kullanıcı Adı : paytr  ,  Şifre : 123123
 
 
