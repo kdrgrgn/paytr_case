@@ -26,7 +26,7 @@ samples, guidance on mobile development, and a full API reference.
 * assets/user_data.json  dosyasına kullanıcı eklenebilir.
 
 **** FLAVOR HAKKINDA
-* uygulamanın hangi mainde çalışılacağı vscode üzerinden seçilebilir.Bunun ile ilgili geliştirme .vscode/launch.json dosyasına yapılmıştır
+* uygulamanın hangi mainde çalışılacağı vscode üzerinden seçilebilir.Bunun ile ilgili geliştirme .vscode/launch.json dosyasına yapılmıştır.Seçimin nasıl yapılacağı env_doc klasöründe resim olarak mevcuttur.Seçim yaptıktan sonra F5 e basmak yeterlidir
 * seçilmezse veya direkt flutter run yapılırsa direkt main.dart ı çalıştırır ve production gibi tepki gösterir
 * istenirse terminal üzerinden de istenilen main çalıştırılabilir
  * production Apk almak için Örnek  ------> flutter build apk -t lib/main_production.dart --release
