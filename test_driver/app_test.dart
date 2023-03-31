@@ -10,7 +10,6 @@ void main() {
     final signinButton = find.byValueKey('signin');
     final countryItem = find.byValueKey('AUD');
     final formField = find.byValueKey('changeField');
-    final title = find.byValueKey('title');
 
     FlutterDriver? driver;
 
@@ -37,6 +36,7 @@ void main() {
       await driver?.waitFor(find.text('123123'));
 
       await driver?.tap(signinButton);
+      sleep(Duration(seconds: 1));
 
       await driver?.waitForTappable(countryItem);
       await driver?.tap(countryItem);
@@ -44,7 +44,7 @@ void main() {
       await driver?.tap(formField);
       await driver?.enterText('12.8');
       await driver?.waitFor(find.text('12.8'));
-
+      sleep(Duration(seconds: 5));
     });
   });
 }
