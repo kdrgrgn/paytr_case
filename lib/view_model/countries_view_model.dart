@@ -1,13 +1,11 @@
 import 'package:paytr_case/app_provider/app_provider_model.dart';
 import 'package:paytr_case/enums.dart';
 import 'package:paytr_case/model/countries/countries.dart';
-import 'package:paytr_case/model/countries/country_detail.dart';
 import 'package:paytr_case/service/network_manager.dart';
 import 'package:paytr_case/shared/functions.dart';
 
 class CountriesViewModel extends BaseModel {
   Countries? countries;
-  CountryDetail? detail;
   getCountries() async {
     try {
       if (countries != null) return;
@@ -26,19 +24,5 @@ class CountriesViewModel extends BaseModel {
     return (value * to) / from;
   }
 
-  Future<void> getDetail(String name) async {
-    try {
-      setViewState2(ViewState.Busy);
-      var response = await NetworkManager.instance.dio
-          .get("https://restcountries.com/v3.1/currency/$name");
-      detail = CountryDetail.fromJson(responseToMap(response));
-      setViewState2(ViewState.Idle);
-    } catch (e) {
-      setViewState2(ViewState.Error);
-    }
-  }
 
-  void clearDetail() {
-    detail = null;
-  }
 }

@@ -15,15 +15,22 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-
-
-
-**** TEST 
-* flutter drive --target=test_driver/app.dart    Komutu ile test çalıştırılır
-
+///////  Flutter (Channel stable, 3.7.9)     Dart version 2.19.6 
  
 **** LOCAL DATA
 * assets/user_data.json  dosyasına kullanıcı eklenebilir.
+
+**** FREEZED KURULUMU
+* terminal ana dizinde scripts/build.sh  komutu çalıştırıldığında freezed için gerekli dosyalar oluşturulur.
+
+
+**** TEST 
+* Entegrasyon testi senaryosu 
+uygulamaya giriş yapmak için kullanıcı adı ve şifre bilgileri doldurulur ve sonra giriş yap butonuna basılır.
+Listelelenen para birimlerinde birine tıklanır.
+Detay sayfasında karşılığını öğrenmek için inputa bir değer girilir.
+* flutter drive --target=test_driver/app.dart    Komutu ile test çalıştırılır
+
 
 **** FLAVOR HAKKINDA
 * uygulamanın hangi mainde çalışılacağı vscode üzerinden seçilebilir.Bunun ile ilgili geliştirme .vscode/launch.json dosyasına yapılmıştır.Seçimin nasıl yapılacağı env_doc klasöründe resim olarak mevcuttur.Seçim yaptıktan sonra F5 e basmak yeterlidir

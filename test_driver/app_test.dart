@@ -36,7 +36,7 @@ void main() {
       await driver?.waitFor(find.text('123123'));
 
       await driver?.tap(signinButton);
-      sleep(Duration(seconds: 1));
+      sleep(Duration(seconds: 2));
 
       await driver?.waitForTappable(countryItem);
       await driver?.tap(countryItem);

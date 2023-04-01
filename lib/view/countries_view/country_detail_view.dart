@@ -8,8 +8,6 @@ import 'package:paytr_case/view_model/countries_view_model.dart';
 import 'package:paytr_case/widget/app/app_loading_widget.dart';
 import 'package:paytr_case/widget/form/textFormField_with_radius.dart';
 
-
-
 class CountryDetailView extends StatefulWidget {
   final String name;
   final double value;
@@ -26,9 +24,6 @@ class _CountryDetailViewState extends State<CountryDetailView> {
   Widget build(BuildContext context) {
     return AppProvider<CountriesViewModel>(onReady: (provider) async {
       await provider.getCountries();
-      provider.getDetail(widget.name);
-    }, onDispose: (provider) {
-      provider.clearDetail();
     }, builder: (context, provider, _) {
       return GestureDetector(
         onTap: () {
@@ -36,7 +31,9 @@ class _CountryDetailViewState extends State<CountryDetailView> {
         },
         child: Scaffold(
           appBar: AppBar(
-              title: Text(provider.detail?.name?.official ?? widget.name,)),
+              title: Text(
+            widget.name,
+          )),
           body: Padding(
             padding: horizontalPadding,
             child: Column(
@@ -51,8 +48,7 @@ class _CountryDetailViewState extends State<CountryDetailView> {
                   onChanged: (value) {
                     setState(() {});
                   },
-                  keyboardType:
-                      TextInputType.numberWithOptions(decimal: true),
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
                   inputFormatters: <TextInputFormatter>[
                     FilteringTextInputFormatter.allow(
                         RegExp(r'^(\d+)?\.?\d{0,2}'))
@@ -68,14 +64,11 @@ class _CountryDetailViewState extends State<CountryDetailView> {
                     ? AppLoadingWidget()
                     : Expanded(
                         child: ListView.builder(
-                            itemCount:
-                                provider.countries?.data?.length ?? 0,
+                            itemCount: provider.countries?.data?.length ?? 0,
                             itemBuilder: (context, index) {
-                              String indexName = provider
-                                  .countries!.data!.keys
+                              String indexName = provider.countries!.data!.keys
                                   .toList()[index];
-                              if (indexName == widget.name)
-                                return SizedBox();
+                              if (indexName == widget.name) return SizedBox();
                               double indexValue = provider
                                   .countries!.data!.values
                                   .toList()[index]

@@ -1,4 +1,4 @@
-import 'package:paytr_case/service/extensions.dart';
+import 'package:paytr_case/shared/extensions.dart';
 
 class EnvKeys {
   static String env_name = 'ENV_NAME'.env;
